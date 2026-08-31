@@ -178,7 +178,7 @@ InsurGen_Presenation/
 | סדר | כיתוב | קישור |
 |-----|-------|-------|
 | 1 | ביטוח חובה | `https://demo.solugen.ai/insurance/case-selection` |
-| 2 | חבויות גוף | `https://ayalon-demo.solugen.ai/case/` |
+| 2 | חבויות גוף | `https://ayalon-demo.solugen.ai/login` |
 
 #### שקף 13 — תודה רבה
 3 כרטיסי צוות (תמונה עגולה בטבעת טורקיז, לפי סדר התצוגה):
