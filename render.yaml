@@ -1,0 +1,17 @@
+# Render Blueprint — static site, no build step.
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: insurgen-presentation
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

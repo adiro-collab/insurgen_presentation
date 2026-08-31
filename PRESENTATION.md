@@ -1,7 +1,7 @@
 # InsurGen™ AI 2.0 — מצגת אינטראקטיבית
 
 מסמך זה מגדיר את המבנה, העיצוב, ההתנהגות והתחזוקה של המצגת האינטראקטיבית
-`insurgen-ai-2.0.html`.
+`index.html`.
 
 ---
 
@@ -17,8 +17,9 @@
 | **מספר שקפים** | 13 |
 | **פורמט** | קובץ HTML עצמאי אחד + תיקיית `assets/` |
 | **תלויות** | אין. Vanilla JS, ללא build, ללא framework. פונטים מ‑Google Fonts (עם fallback ל‑offline) |
-| **הרצה** | פתיחה ישירה בדפדפן (`file://`) — עובד מקומית ללא שרת |
-| **סטטוס פרסום** | מקומי בלבד. לא פורסם לענן |
+| **הרצה** | פתיחה ישירה בדפדפן (`file://`) — עובד מקומית ללא שרת. גם כאתר סטטי (ראו §10) |
+| **Repo** | `github.com/adiro-collab/insurgen_presentation` (private) |
+| **פריסה** | Render — Static Site, ללא build. ראו §10 |
 
 ---
 
@@ -26,7 +27,7 @@
 
 ```
 InsurGen_Presenation/
-├── insurgen-ai-2.0.html      ← המצגת (מסמך HTML מלא ועצמאי)
+├── index.html      ← המצגת (מסמך HTML מלא ועצמאי)
 ├── PRESENTATION.md           ← המסמך הזה
 └── assets/
     ├── solugen-logo.png      לוגו SoluGen AI (לבן + טורקיז, שקוף)   ~1100×170
@@ -40,7 +41,7 @@ InsurGen_Presenation/
     └── yana.jpg              תמונת פרופיל — Yana Rubanovich          480×480
 ```
 
-> **חשוב:** יש להשאיר את `insurgen-ai-2.0.html` ואת `assets/` באותה תיקייה.
+> **חשוב:** יש להשאיר את `index.html` ואת `assets/` באותה תיקייה.
 > אם מעבירים את ה‑HTML לבד, התמונות יישברו.
 
 ---
@@ -308,7 +309,7 @@ InsurGen_Presenation/
 
 ## 8. הרצה והצגה
 
-1. לפתוח את `insurgen-ai-2.0.html` בדפדפן (Chrome / Safari / Edge / Firefox עדכני).
+1. לפתוח את `index.html` בדפדפן (Chrome / Safari / Edge / Firefox עדכני).
 2. `F` למסך מלא.
 3. לנווט עם `←` (קדימה) / `→` (אחורה), רווח, או הלחצנים על המסך.
 4. בשקף 12 — הקישורים נפתחים בלשונית חדשה מול סביבות ה‑demo החיות.
@@ -331,3 +332,33 @@ InsurGen_Presenation/
 - שקף 9: תמונת הארכיטקטורה מה‑PDF במסך מלא (במקום שחזור ב‑HTML).
 - שקף 12: נוספו 2 קישורים חיים למערכת (`פתיחת הפתרון`).
 - שקף 13: תמונות הפנים האמיתיות מה‑PDF (במקום ראשי תיבות).
+
+---
+
+## 10. פריסה (Render — Static Site)
+
+האתר הוא **HTML סטטי בלבד** — אין build, אין שרת, אין Node. יש לפרוס אותו כ‑
+**Static Site** ולא כ‑Web Service.
+
+### דרך א׳ — Blueprint (מומלץ, אוטומטי)
+הריפו כולל `render.yaml`. ב‑Render:
+1. **New → Blueprint**
+2. לבחור את הריפו `insurgen_presentation`
+3. **Apply** — Render קורא את `render.yaml` ומקים Static Site ללא build.
+
+### דרך ב׳ — הגדרה ידנית
+**New → Static Site** ולבחור את הריפו, עם ההגדרות:
+
+| שדה | ערך |
+|-----|-----|
+| **Language / Environment** | `Static Site` |
+| **Build Command** | *(להשאיר ריק)* |
+| **Publish Directory** | `.` |
+| **Branch** | `main` |
+
+### נקודות שגורמות לשגיאה
+- **בחירת "Web Service" במקום "Static Site"** — Render יחפש `start command` / רנטיים ויכשל. חובה Static Site.
+- **Build Command לא ריק** (למשל `npm install`) — אין `package.json`, ה‑build ייכשל. להשאיר ריק.
+- **Publish Directory שגוי** — חייב להיות `.` (שורש הריפו), שם נמצא `index.html`.
+- הקובץ הראשי הוא **`index.html`** (שוּנה מ‑`insurgen-ai-2.0.html`) כדי ש‑Render יגיש אותו בשורש.
+- הפונטים נטענים מ‑`fonts.googleapis.com` — עובד על דומיין HTTPS אמיתי (ויש fallback).
