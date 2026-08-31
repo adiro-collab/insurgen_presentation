@@ -37,6 +37,7 @@ InsurGen_Presenation/
     │   ├── harel.png  phoenix.png  migdal.png  aig.png  clal.png
     │   └── menora.png tmura.png  madanes.png  shomera.png  hapool.png
     ├── adir.jpg              תמונת פרופיל — Adir Oren                480×480
+    ├── nechemya.jpg          תמונת פרופיל — Nechemya Kanelsky        480×480
     ├── niv.jpg               תמונת פרופיל — Niv Ben Shimon           480×480
     └── yana.jpg              תמונת פרופיל — Yana Rubanovich          480×480
 ```
@@ -181,15 +182,16 @@ InsurGen_Presenation/
 | 2 | חבויות גוף | `https://ayalon-demo.solugen.ai/login` |
 
 #### שקף 13 — תודה רבה
-3 כרטיסי צוות (תמונה עגולה בטבעת טורקיז, לפי סדר התצוגה):
+4 כרטיסי צוות (תמונה עגולה בטבעת טורקיז, לפי סדר התצוגה):
 
 | סדר | שם | תפקיד | טלפון | מייל |
 |-----|-----|-------|-------|------|
 | 1 | Adir Oren | CEO | 054-5615656 | adiro@solugen.ai |
-| 2 | Niv Ben Shimon | Sales Director | 050-8949450 | nivb@solugen.ai |
-| 3 | Yana Rubanovich | Head of Product | 050-7502511 | yanar@solugen.ai |
+| 2 | Nechemya Kanelsky | Innovation Lead | 050-6730770 | nk@solugen.ai |
+| 3 | Niv Ben Shimon | Sales Director | 050-8949450 | nivb@solugen.ai |
+| 4 | Yana Rubanovich | Head of Product | 050-7502511 | yanar@solugen.ai |
 
-כותרת תחתונה: `SoluGen AI · by compie`
+כותרת תחתונה: קישור ל‑`www.solugen.ai`
 
 ---
 
@@ -272,6 +274,7 @@ InsurGen_Presenation/
 | `logos/*.png` (×10) | PDF עמוד 4 — כל לוגו חולץ, אוחד ל‑לבן על שקוף, נחתך | רוחב ≤900 | שקוף. לוגואי לקוחות לשקף 4 |
 | `partners.png` | PDF עמוד 3 — 3 לוגואים חולצו ועובדו ל‑אפור בהיר על שקוף | ~1334×186 | שקוף |
 | `adir.jpg` / `niv.jpg` / `yana.jpg` | PDF עמוד 13 — חילוץ ותמונות, חיתוך לריבוע | 480×480 | JPEG |
+| `nechemya.jpg` | תמונה שסופקה, חיתוך לריבוע (הוסרה טבעת מקורית) | 480×480 | JPEG |
 
 ---
 
