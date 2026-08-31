@@ -156,7 +156,7 @@
     width:1.35em;height:1.35em;color:var(--teal);opacity:.6;pointer-events:none;
   }
   .ic{fill:none}
-  #i-spark path{fill:currentColor}
+  #i-spark path,#i-ai path{fill:currentColor}
   .idx{
     font-family:var(--font-mono);font-weight:500;color:var(--teal);
     font-size:clamp(1.3rem,4.2cqh,2.3rem);opacity:.42;line-height:1;
@@ -475,6 +475,7 @@
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1c.6 6 4.9 10.3 11 11-6.1.7-10.4 5-11 11-.6-6-4.9-10.3-11-11 6.1-.7 10.4-5 11-11z"/></symbol>
+  <symbol id="i-ai" viewBox="0 0 24 24"><path fill="currentColor" d="M9 1.5c.46 4.6 3.4 7.54 8 8-4.6.46-7.54 3.4-8 8-.46-4.6-3.4-7.54-8-8 4.6-.46 7.54-3.4 8-8z"/><path fill="currentColor" d="M18.5 12.5c.2 2.2 1.6 3.6 3.5 3.8-1.9.2-3.3 1.6-3.5 3.7-.2-2.1-1.6-3.5-3.5-3.7 1.9-.2 3.3-1.6 3.5-3.8z"/></symbol>
   <symbol id="i-exp" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 14.5a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM8.5 13.5l-1.8 7 5.3-3 5.3 3-1.8-7"/></symbol>
   <symbol id="i-tech" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M8 8h8v8H8zM4 10h2M4 14h2M18 10h2M18 14h2M10 4v2M14 4v2M10 18v2M14 18v2"/></symbol>
   <symbol id="i-gov" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 2.6v5.1c0 4.7-3 7.6-7 9.3-4-1.7-7-4.6-7-9.3V5.6zM8.7 12l2.2 2.2 4.4-4.4"/></symbol>
@@ -660,7 +661,7 @@
             </ul>
           </div>
           <div class="card card--feat" data-reveal>
-            <div class="feat-head"><svg class="ic"><use href="#i-gov"/></svg><h3>AI תהליכי</h3></div>
+            <div class="feat-head"><svg class="ic"><use href="#i-ai"/></svg><h3>AI תהליכי</h3></div>
             <ul>
               <li><b>מבין את התיק באופן יזום</b> – קורא את המסמכים, הנתונים וההיסטוריה ומייצר תמונת 360° בלי שהמשתמש צריך לדעת מה לשאול.</li>
               <li><b>מפעיל לוגיקה עסקית ולא רק LLM</b> – שילוב של GenAI, מנוע חוקים, ולידציות, הצלבות ו־Decision Logic.</li>
