@@ -1,16 +1,15 @@
-# Render Blueprint — static site, no build step.
+# Render Blueprint — static site.
 # https://render.com/docs/blueprint-spec
+#
+# The build step just copies the static files into ./build so that the
+# publish directory Render pre-fills ("build") works out of the box.
 services:
   - type: web
     name: insurgen-presentation
     runtime: static
-    buildCommand: ""
-    staticPublishPath: .
+    buildCommand: "rm -rf build && mkdir build && cp index.html build/ && cp -R assets build/"
+    staticPublishPath: build
     pullRequestPreviewsEnabled: false
-    headers:
-      - path: /*
-        name: Cache-Control
-        value: public, max-age=0, must-revalidate
     routes:
       - type: rewrite
         source: /*

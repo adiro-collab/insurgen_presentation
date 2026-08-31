@@ -346,19 +346,21 @@ InsurGen_Presenation/
 2. לבחור את הריפו `insurgen_presentation`
 3. **Apply** — Render קורא את `render.yaml` ומקים Static Site ללא build.
 
-### דרך ב׳ — הגדרה ידנית
-**New → Static Site** ולבחור את הריפו, עם ההגדרות:
+### דרך ב׳ — הגדרה ידנית (Static Site קיים)
 
 | שדה | ערך |
 |-----|-----|
-| **Language / Environment** | `Static Site` |
-| **Build Command** | *(להשאיר ריק)* |
-| **Publish Directory** | `.` |
+| **Environment** | `Static Site` (לא "Web Service") |
 | **Branch** | `main` |
+| **Build Command** | `rm -rf build && mkdir build && cp index.html build/ && cp -R assets build/` |
+| **Publish Directory** | `build` |
+
+> אפשר גם בלי build כלל: **Build Command** ריק, **Publish Directory** = `.`
 
 ### נקודות שגורמות לשגיאה
-- **בחירת "Web Service" במקום "Static Site"** — Render יחפש `start command` / רנטיים ויכשל. חובה Static Site.
-- **Build Command לא ריק** (למשל `npm install`) — אין `package.json`, ה‑build ייכשל. להשאיר ריק.
-- **Publish Directory שגוי** — חייב להיות `.` (שורש הריפו), שם נמצא `index.html`.
+- **`Publish directory build does not exist`** — Publish Directory הוגדר `build` אבל אין build שמייצר את התיקייה.
+  פתרון: או להגדיר Build Command כמו בטבלה למעלה (מייצר `build/`), או לשנות Publish Directory ל‑`.`.
+- **בחירת "Web Service" במקום "Static Site"** — Render יחפש `start command` / רנטיים ויכשל.
+- **Build Command עם `npm install`** — אין `package.json`, ייכשל.
 - הקובץ הראשי הוא **`index.html`** (שוּנה מ‑`insurgen-ai-2.0.html`) כדי ש‑Render יגיש אותו בשורש.
 - הפונטים נטענים מ‑`fonts.googleapis.com` — עובד על דומיין HTTPS אמיתי (ויש fallback).
