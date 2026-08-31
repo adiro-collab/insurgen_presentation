@@ -216,23 +216,24 @@
   .logo-wall{
     margin:auto 0;width:100%;
     background:var(--panel);border:1px solid var(--line);border-radius:16px;
-    padding:4.5cqh 4cqw;
+    padding:5cqh 5cqw;
     display:grid;grid-template-columns:repeat(4,1fr);
-    gap:3cqh 3cqw;align-items:center;justify-items:center;
+    gap:5cqh 4cqw;align-items:center;justify-items:center;
   }
-  .lw{display:grid;place-items:center;width:100%}
+  /* every logo sits on an identical 680×240 transparent canvas, so a single
+     width makes them all render at exactly the same size */
+  .lw{display:flex;justify-content:center;width:100%}
   .lw img{
-    max-width:100%;max-height:6.2cqh;width:auto;
-    opacity:.68;
+    width:15cqw;height:auto;
+    opacity:.7;
     transition:opacity .22s ease, transform .22s ease, filter .22s ease;
   }
   .lw:hover img{
-    opacity:1;transform:scale(1.08);
+    opacity:1;transform:scale(1.07);
     filter:drop-shadow(0 0 16px rgba(22,217,168,.5));
   }
-  .lw-row{grid-column:1/-1;display:flex;justify-content:center;align-items:center;gap:6cqw;margin-bottom:1.4cqh}
+  .lw-row{grid-column:1/-1;display:flex;justify-content:center;align-items:center;gap:9cqw;margin-bottom:.5cqh}
   .lw-row .lw{width:auto}
-  .lw--lead img{max-height:9.2cqh}
 
   /* ---------- slide 5 : pain ---------- */
   .lead-line{text-align:center;color:var(--ink-2);font-size:clamp(.95rem,3cqh,1.45rem);font-weight:400}
