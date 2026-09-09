@@ -343,7 +343,54 @@
   @keyframes float{0%,100%{transform:translateY(-2%)}50%{transform:translateY(3%)}}
   @media (prefers-reduced-motion:reduce){ .demo .bot{animation:none} }
 
-  /* ---------- slide 13 : thanks ---------- */
+  /* ---------- slide 13 : product roadmap (timeline) ---------- */
+  #s13 .s-head{margin-bottom:1.4cqh}
+  .tl{
+    position:relative;direction:ltr;
+    display:grid;grid-template-columns:repeat(5,1fr);
+    align-items:stretch;min-height:46cqh;margin-top:1cqh;
+  }
+  .tl::before{
+    content:"";position:absolute;inset-inline:1cqw;top:50%;
+    height:5px;transform:translateY(-50%);
+    background:linear-gradient(90deg,var(--blue),var(--teal));
+    border-radius:5px;box-shadow:0 0 20px rgba(22,217,168,.26);
+  }
+  .tl-col{
+    position:relative;
+    display:grid;grid-template-rows:1fr auto 1fr;
+    align-items:center;justify-items:center;padding-inline:.6cqw;
+  }
+  .tl-node{
+    grid-row:2;position:relative;z-index:2;
+    width:clamp(2.9rem,8.4cqh,4.1rem);aspect-ratio:1;border-radius:50%;
+    background:var(--bg-2);border:2px solid var(--teal);color:var(--teal);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05;
+    font-family:var(--font-mono);font-weight:600;
+    box-shadow:0 0 0 7px var(--bg),0 0 22px rgba(22,217,168,.26);
+    transition:transform .25s ease;
+  }
+  .tl-col:hover .tl-node{transform:scale(1.08)}
+  .tl-node .q{font-size:clamp(.72rem,2.05cqh,1.02rem)}
+  .tl-node .y{font-size:clamp(.5rem,1.4cqh,.68rem);font-weight:500;color:var(--ink-3);margin-top:.15em}
+  .tl-node--blue{border-color:var(--blue);color:var(--blue);box-shadow:0 0 0 7px var(--bg),0 0 22px rgba(34,165,220,.26)}
+  .tl-node::after{
+    content:"";position:absolute;left:50%;width:2px;
+    background:var(--line-2);transform:translateX(-50%);
+  }
+  .tl-node--up::after{bottom:100%;height:4.6cqh}
+  .tl-node--down::after{top:100%;height:4.6cqh}
+  .tl-item{display:flex;flex-direction:column;gap:.7cqh;text-align:center;width:100%;direction:rtl}
+  .tl-item--top{grid-row:1;align-self:end;padding-bottom:5.8cqh}
+  .tl-item--bot{grid-row:3;align-self:start;padding-top:5.8cqh}
+  .tl-item .en{
+    font-family:var(--font-mono);font-weight:500;letter-spacing:.02em;
+    color:var(--teal);line-height:1.3;font-size:clamp(.66rem,1.8cqh,.92rem);
+  }
+  .tl-item--blue .en{color:var(--blue)}
+  .tl-item p{margin:0;color:var(--ink-2);line-height:1.48;font-size:clamp(.6rem,1.58cqh,.82rem)}
+
+  /* ---------- slide 14 : thanks ---------- */
   .team{display:grid;grid-template-columns:repeat(4,1fr);gap:2.2cqw;margin:auto 0;direction:ltr}
   .person{
     background:var(--panel);border:1px solid var(--line);border-radius:14px;
@@ -469,6 +516,14 @@
     .logo--lead{grid-column:span 2}
     .agenda,.demo{grid-template-columns:1fr}
     .team{grid-template-columns:1fr}
+
+    /* roadmap timeline → vertical stack */
+    .tl{display:flex;flex-direction:column;gap:2rem;min-height:0;margin-top:1.5cqh;direction:rtl}
+    .tl::before{inset-block:.6rem;inset-inline:auto;inset-inline-start:1.45rem;width:3px;height:auto;transform:none;background:linear-gradient(180deg,var(--blue),var(--teal))}
+    .tl-col{display:flex;flex-direction:row;align-items:center;gap:1rem;padding:0}
+    .tl-node{order:-1;flex:none;width:2.9rem;box-shadow:0 0 0 5px var(--bg),0 0 18px rgba(22,217,168,.25)}
+    .tl-node::after{display:none}
+    .tl-item{padding:0;text-align:start;gap:.4rem;align-self:center}
   }
 </style>
 </head>
@@ -510,6 +565,7 @@
             <button class="a-item" data-reveal data-goto="8"><span class="circle">4</span>ייחודיות הפתרון</button>
             <button class="a-item" data-reveal data-goto="10"><span class="circle">5</span>סיפורי הצלחה</button>
             <button class="a-item" data-reveal data-goto="12"><span class="circle">6</span>הדגמת מערכת</button>
+            <button class="a-item" data-reveal data-goto="13"><span class="circle">7</span>מפת דרכים</button>
           </div>
           <div class="big" data-reveal>על מה<br>נדבר היום</div>
         </div>
@@ -783,8 +839,57 @@
       </div>
     </section>
 
-    <!-- 13 — thanks -->
-    <section class="slide" id="s13" data-title="תודה רבה" data-section="סיום">
+    <!-- 13 — product roadmap -->
+    <section class="slide" id="s13" data-title="מפת דרכים מוצרית" data-section="Roadmap">
+      <header class="s-head" data-reveal>
+        <div class="eyebrow"><span class="tick"></span><span class="num">06</span> · מפת דרכים</div>
+        <h2 class="s-title">מפת דרכים מוצרית</h2>
+        <p class="s-sub">PRODUCT ROADMAP</p>
+      </header>
+      <div class="s-body">
+        <div class="tl">
+          <div class="tl-col" data-reveal>
+            <div class="tl-item tl-item--top tl-item--blue">
+              <span class="en">Fraud AI</span>
+              <p>אינטגרציה עם כלי הונאה ייעודיים וזיהוי מסמכים מזויפים.</p>
+            </div>
+            <div class="tl-node tl-node--up tl-node--blue"><span class="q">Q3</span><span class="y">2028</span></div>
+          </div>
+          <div class="tl-col" data-reveal>
+            <div class="tl-node tl-node--down tl-node--blue"><span class="q">Q1</span><span class="y">2028</span></div>
+            <div class="tl-item tl-item--bot tl-item--blue">
+              <span class="en">Risk Insights</span>
+              <p>זיהוי מוקדם של תביעות חשודות ואנומליות לאורך חיי התביעה.</p>
+            </div>
+          </div>
+          <div class="tl-col" data-reveal>
+            <div class="tl-item tl-item--top">
+              <span class="en">Adaptive AI</span>
+              <p>הגדרת דומיין חדש בפרומפט — המערכת בונה מסכים ולוגיקה עסקית ומקצרת דרמטית את זמני ההטמעה.</p>
+            </div>
+            <div class="tl-node tl-node--up"><span class="q">Q4</span><span class="y">2027</span></div>
+          </div>
+          <div class="tl-col" data-reveal>
+            <div class="tl-node tl-node--down"><span class="q">Q2</span><span class="y">2027</span></div>
+            <div class="tl-item tl-item--bot">
+              <span class="en">Domain Settlement Engines</span>
+              <p>מנועי יישוב תביעה ייעודיים לכל תחום עסקי, והרחבה מתמדת לענפים ותהליכים נוספים.</p>
+            </div>
+          </div>
+          <div class="tl-col" data-reveal>
+            <div class="tl-item tl-item--top">
+              <span class="en">Predictive Claims Intelligence</span>
+              <p>חיזוי רמת הוודאות לסגירת התיק — לטובת שיריון תקציבי מדויק (Reserving) לתשלומי פיצויים.</p>
+            </div>
+            <div class="tl-node tl-node--up"><span class="q">Q4</span><span class="y">2026</span></div>
+          </div>
+        </div>
+        <div class="note" data-reveal>המשך הפיתוח מרחיב את יכולות ה־AI מעבר לקבלת ההחלטה — אל חיזוי תקציבי, זיהוי סיכון מוקדם ומאבק בהונאה.</div>
+      </div>
+    </section>
+
+    <!-- 14 — thanks -->
+    <section class="slide" id="s14" data-title="תודה רבה" data-section="סיום">
       <header class="s-head" data-reveal>
         <div class="eyebrow"><span class="tick"></span>SoluGen AI</div>
         <h2 class="s-title">תודה רבה</h2>
@@ -830,7 +935,7 @@
   <div class="hud">
     <button data-act="prev" aria-label="שקף קודם" title="שקף קודם"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5 16.5 12 9 19.5"/></svg></button>
     <div class="bar"><i></i></div>
-    <span class="count">01 / 13</span>
+    <span class="count">01 / 14</span>
     <button data-act="ov" aria-label="סקירת שקפים" title="סקירת שקפים (G)">&#9638;</button>
     <button data-act="fs" aria-label="מסך מלא" title="מסך מלא (F)">&#9974;</button>
     <button data-act="next" aria-label="שקף הבא" title="שקף הבא"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4.5 7.5 12 15 19.5"/></svg></button>
