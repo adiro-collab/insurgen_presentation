@@ -35,7 +35,7 @@ InsurGen_Presenation/
     ├── partners.png          לוגואי ענן AWS · Azure · GCP (שקוף)     ~1334×186
     ├── logos/                10 לוגואי לקוחות, לבן על שקוף (שקף 4)
     │   ├── harel.png  phoenix.png  migdal.png  aig.png  clal.png
-    │   └── menora.png tmura.png  madanes.png  shomera.png  hapool.png
+    │   └── ayalon.png tmura.png  madanes.png  shomera.png  hapool.png
     ├── adir.jpg              תמונת פרופיל — Adir Oren                480×480
     ├── nechemya.jpg          תמונת פרופיל — Nechemya Kanelsky        480×480
     ├── niv.jpg               תמונת פרופיל — Niv Ben Shimon           480×480
